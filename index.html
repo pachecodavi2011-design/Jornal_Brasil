@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> A Era Das Evoluções — Edição Especial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #efe6d2;
+    --paper-dark: #e3d8bb;
+    --ink: #2b2620;
+    --ink-light: #5b5347;
+    --rule: #c9bb95;
+    --red: #7a2118;
+    --gold: #9c7c3c;
+    --hip-1: #d99a3b;
+    --hip-2: #3f7d6c;
+    --hip-3: #c24b3a;
+    --hip-bg: #fdf6e3;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(ellipse at top left, rgba(0,0,0,0.06), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(0,0,0,0.06), transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    color: var(--ink);
+    font-family: 'PT Serif', serif;
+    line-height: 1.65;
+    border-top: 9px solid var(--ink);
+  }
+
+  a{ color: var(--red); }
+
+  .wrap{ max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- MASTHEAD ---------- */
+  header.masthead{
+    padding: 30px 0 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ribbon{
+    position: absolute;
+    top: 14px;
+    right: -52px;
+    width: 230px;
+    text-align: center;
+    background: var(--red);
+    color: var(--paper);
+    font-family: 'Special Elite', monospace;
+    font-size: 0.74rem;
+    letter-spacing: 2px;
+    padding: 8px 0;
+    transform: rotate(8deg);
+    box-shadow: 0 5px 14px rgba(0,0,0,0.35);
+    border-top: 1px solid rgba(255,255,255,0.35);
+    border-bottom: 1px solid rgba(0,0,0,0.35);
+    z-index: 5;
+    animation: ribbonIn 0.6s ease-out;
+  }
+
+  @keyframes ribbonIn{
+    from{ transform: rotate(8deg) translateY(-30px); opacity:0; }
+    to{ transform: rotate(8deg) translateY(0); opacity:1; }
+  }
+
+  .masthead h1{
+    font-family: 'Old Standard TT', serif;
+    font-weight: 700;
+    font-size: clamp(2.7rem, 7.5vw, 5.4rem);
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 rgba(122,33,24,0.22);
+  }
+
+  .masthead .tagline{
+    font-family: 'Special Elite', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  .rule-thick{
+    height: 6px;
+    margin-top: 16px;
+    background: linear-gradient(to right, var(--red), var(--gold));
+  }
+
+  .dateline-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 8px 0;
+  }
+  .dateline-bar .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; width:100%; }
+
+  nav.index{
+    border-bottom: 3px solid var(--ink);
+    padding: 10px 0 14px;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.78rem;
+    text-align: center;
+    color: var(--ink);
+    background: var(--paper-dark);
+  }
+
+  nav.index .label{ color: var(--red); margin-right: 10px; }
+
+  nav.index a{
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--ink-light);
+    margin: 0 4px;
+    padding: 4px 8px;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  nav.index a:hover{ background: var(--red); color: var(--paper); border-color: var(--red); }
+
+  /* ---------- HERO TIMELINE ---------- */
+  .hero-banner{
+    background: linear-gradient(135deg, var(--ink) 0%, var(--red) 100%);
+    padding: 28px 0 18px;
+  }
+  .hero-banner .eyebrow{
+    text-align:center; color: var(--gold); background:none; padding:0;
+    font-family:'Special Elite', monospace; font-size:0.78rem; letter-spacing:3px;
+    text-transform:uppercase; margin-bottom:4px;
+  }
+  .hero-banner h2{
+    text-align:center; color: var(--paper); font-family:'Old Standard TT', serif;
+    font-size: clamp(1.5rem, 4vw, 2.4rem); margin: 2px 0 6px;
+  }
+  .hero-caption{
+    text-align:center; font-family:'Special Elite', monospace; color: var(--paper);
+    font-size:0.74rem; letter-spacing:1px; opacity:0.8; margin:0 0 10px;
+  }
+  .timeline-desktop svg{ display:block; width:100%; height:auto; }
+  .timeline-desktop .node-link circle{ transition: r 0.2s; }
+  .timeline-desktop .node-link:hover circle{ r:15; }
+  .timeline-desktop .node-link text{ font-family:'Special Elite', monospace; }
+
+  .timeline-mobile{ display:none; }
+
+  @media (max-width: 760px){
+    .timeline-desktop{ display:none; }
+    .timeline-mobile{
+      display:block; list-style:none; padding:0; margin:0; max-width:420px; margin:0 auto;
+    }
+    .timeline-mobile li{ padding:9px 4px; border-bottom:1px dashed rgba(255,255,255,0.3); }
+    .timeline-mobile li.branch{ margin-left:20px; border-left:2px dashed var(--hip-1); padding-left:10px; }
+    .timeline-mobile a{
+      color: var(--paper); text-decoration:none; display:flex; gap:12px; align-items:baseline;
+      font-family:'PT Serif', serif; font-size:0.92rem;
+    }
+    .timeline-mobile .t-year{
+      font-family:'Special Elite', monospace; color: var(--gold); font-weight:bold; min-width:64px;
+    }
+  }
+
+  /* ---------- FRONT PAGE ---------- */
+  .front{ padding: 32px 0 10px; border-bottom: 6px double var(--ink); margin-bottom: 36px; }
+
+  .eyebrow{
+    display:inline-block; background: var(--red); color: var(--paper);
+    font-family: 'Special Elite', monospace; font-size: 0.7rem; letter-spacing: 2px;
+    padding: 3px 10px; margin-bottom: 8px; text-transform: uppercase;
+  }
+
+  .front .lead h2{
+    font-family: 'Old Standard TT', serif;
+    font-size: clamp(2.1rem, 4.4vw, 3.3rem);
+    line-height: 1.1; margin: 0 0 10px;
+    text-shadow: 2px 2px 0 rgba(122,33,24,0.12);
+  }
+
+  .front .lead .subhead{
+    font-style: italic; color: var(--ink-light); font-size: 1.05rem;
+    max-width: 720px; margin-bottom: 6px;
+  }
+
+  .front-grid{ display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; align-items: start; margin-top: 8px; }
+  .front-grid .lead{ border-right: 1px solid var(--rule); padding-right: 28px; }
+
+  .secondary-box{
+    border: 2px solid var(--hip-2);
+    padding: 18px 20px;
+    background: var(--hip-bg);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .secondary-box:hover{ transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.18); }
+  .secondary-box .eyebrow{ background: var(--hip-3); }
+
+  .secondary-box h3{
+    font-family: 'Old Standard TT', serif; font-size: 1.55rem; margin: 0 0 8px; line-height: 1.2;
+  }
+  .secondary-box .subhead{ font-style: italic; color: var(--ink-light); font-size: 0.92rem; margin-bottom: 10px; }
+
+  .read-link{ font-family: 'Special Elite', monospace; font-size: 0.74rem; text-decoration: none; border-bottom: 1px solid var(--red); }
+
+  /* ---------- SECTION DIVIDER ---------- */
+  .section-divider{ display: flex; align-items: center; gap: 14px; margin: 50px 0 30px; }
+  .section-divider::before, .section-divider::after{ content:""; flex: 1; height: 1px; background: var(--ink); }
+  .section-divider span{
+    font-family: 'Old Standard TT', serif; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2px; font-size: 1rem; color: var(--red);
+  }
+
+  /* ---------- ARTICLES ---------- */
+  article.story{
+    margin-bottom: 56px; opacity: 0; transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  article.story.visible{ opacity: 1; transform: translateY(0); }
+
+  article.story .kicker{
+    display:inline-block; background: var(--red); color: var(--paper);
+    font-family: 'Special Elite', monospace; font-size: 0.7rem; letter-spacing: 2px;
+    padding: 3px 10px; text-transform: uppercase; margin-bottom: 8px;
+  }
+
+  article.story h2{
+    font-family: 'Old Standard TT', serif; font-size: clamp(1.8rem, 3.1vw, 2.4rem);
+    line-height: 1.16; margin: 0 0 8px; text-shadow: 1px 1px 0 rgba(122,33,24,0.12);
+  }
+
+  article.story .byline{
+    font-family: 'Special Elite', monospace; font-size: 0.72rem; color: var(--ink-light);
+    border-bottom: 1px solid var(--rule); padding-bottom: 14px; margin-bottom: 16px;
+  }
+
+  .story-banner{ width:100%; margin-bottom: 18px; border: 1px solid var(--ink); overflow:hidden; }
+  .story-banner svg{ display:block; width:100%; height:auto; }
+
+  .story-photo{
+    width:100%; margin: 0 0 18px; border: 1px solid var(--ink);
+    background: var(--ink); padding: 0;
+  }
+  .story-photo img{
+    display:block; width:100%; height: 320px; object-fit: cover;
+    object-position: center;
+    filter: sepia(28%) contrast(1.05) saturate(0.85);
+  }
+  .story-photo figcaption{
+    font-family: 'Special Elite', monospace; font-size: 0.68rem; letter-spacing: 0.5px;
+    color: var(--paper); background: var(--ink); padding: 8px 12px;
+    border-top: 1px solid var(--gold); line-height:1.4;
+  }
+  @media (max-width: 760px){
+    .story-photo img{ height: 220px; }
+  }
+
+  .story-grid{ display: grid; grid-template-columns: 1.7fr 1fr; gap: 32px; align-items: start; }
+
+  .story-body p{ margin: 0 0 16px; text-align: justify; hyphens: auto; }
+
+  .story-body p:first-of-type::first-letter{
+    font-family: 'Old Standard TT', serif; font-weight: 700; font-size: 3.6rem; color: var(--red);
+    float: left; line-height: 0.78; padding: 4px 8px 0 0;
+  }
+
+  .ornament{ text-align: center; color: var(--gold); font-size: 1rem; margin: 18px 0; letter-spacing: 6px; }
+
+  blockquote.pull{
+    font-family: 'Old Standard TT', serif; font-style: italic; font-size: 1.25rem; line-height: 1.4;
+    color: var(--ink); border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    padding: 14px 4px; margin: 22px 0;
+  }
+  blockquote.pull cite{
+    display: block; font-family: 'Special Elite', monospace; font-style: normal; font-size: 0.68rem;
+    letter-spacing: 1px; color: var(--ink-light); margin-top: 8px; text-transform: uppercase;
+  }
+
+  .factbox{ border: 1px solid var(--ink); background: var(--paper-dark); padding: 16px 18px; }
+  .factbox h4{
+    font-family: 'Special Elite', monospace; font-size: 0.78rem; letter-spacing: 1.5px;
+    text-transform: uppercase; margin: 0 0 12px; color: var(--red);
+    border-bottom: 1px solid var(--rule); padding-bottom: 8px;
+  }
+  .factbox ol{ margin: 0; padding-left: 0; list-style: none; }
+  .factbox li{ position: relative; padding-left: 18px; margin-bottom: 12px; font-size: 0.88rem; }
+  .factbox li::before{ content: "❦"; position: absolute; left: 0; top: 0; color: var(--gold); font-size: 0.85rem; }
+  .factbox li b{ display: block; font-family: 'Special Elite', monospace; font-size: 0.74rem; color: var(--ink); margin-bottom: 2px; }
+
+  /* hippie color scoping */
+  .story--hippie .kicker{ background: var(--hip-3); }
+  .story--hippie .story-body p:first-of-type::first-letter{ color: var(--hip-3); }
+  .story--hippie blockquote.pull{ border-color: var(--hip-2); }
+  .story--hippie .factbox{ border-color: var(--hip-2); background: var(--hip-bg); }
+  .story--hippie .factbox h4{ color: var(--hip-3); }
+  .story--hippie .factbox li::before{ color: var(--hip-1); }
+  .story--hippie h2{ text-shadow: 1px 1px 0 rgba(194,75,58,0.18); }
+
+  /* ---------- CREDITS ---------- */
+  .credits{ display:flex; justify-content:center; gap:60px; flex-wrap:wrap; padding: 6px 0 36px; }
+  .credits-group h4{
+    font-family:'Old Standard TT', serif; font-size:1.05rem; margin:0 0 12px; text-transform:uppercase;
+    letter-spacing:1px; border-bottom:2px solid var(--red); display:inline-block; padding-bottom:4px;
+  }
+  .credits-group ul{ list-style:none; padding:0; margin:0; font-size:1rem; }
+  .credits-group li{ padding:4px 0; }
+  .credits-group li::before{ content:"✦ "; color:var(--gold); }
+  .owner-block{ text-align:center; }
+  .owner-stamp{
+    width:130px; height:130px; border:3px double var(--red); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-family:'Special Elite', monospace;
+    font-size:0.7rem; letter-spacing:1px; color:var(--red); transform:rotate(-6deg);
+    margin:0 auto 10px; line-height:1.3; padding:8px; text-transform:uppercase;
+  }
+  .owner-name{ font-family:'Old Standard TT', serif; font-weight:700; font-size:1.35rem; color:var(--ink); margin:0; }
+  .owner-sub{ font-family:'Special Elite', monospace; font-size:0.68rem; color:var(--ink-light); letter-spacing:1px; text-transform:uppercase; margin-top:2px; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top: 6px double var(--ink); padding: 26px 0 50px; text-align: center;
+    font-family: 'Special Elite', monospace; font-size: 0.72rem; color: var(--ink-light); letter-spacing: 0.5px;
+  }
+
+  #top-btn{
+    position: fixed; bottom: 22px; right: 22px; background: var(--red); color: var(--paper);
+    border: none; width: 46px; height: 46px; border-radius: 50%; font-family: 'Special Elite', monospace;
+    font-size: 1.1rem; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.35);
+  }
+  #top-btn.show{ opacity: 0.95; pointer-events: auto; }
+  #top-btn:hover{ transform: scale(1.1); }
+  #top-btn:focus-visible, nav.index a:focus-visible, .read-link:focus-visible, .timeline-desktop a:focus-visible{
+    outline: 2px solid var(--gold); outline-offset: 2px;
+  }
+
+  @media (max-width: 760px){
+    .front-grid, .story-grid{ grid-template-columns: 1fr; }
+    .front-grid .lead{ border-right: none; padding-right: 0; border-bottom: 1px solid var(--rule); padding-bottom: 20px; margin-bottom: 20px; }
+    .ribbon{ width: 170px; font-size: 0.62rem; right: -38px; top: 10px; }
+    .masthead h1{ font-size: clamp(2rem, 11vw, 3rem); }
+    .credits{ gap:30px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+    article.story{ opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="ribbon">EDIÇÃO<br>ESPECIAL</div>
+  <div class="wrap">
+    <h1>A Era Das Evoluções</h1>
+    <div class="tagline">Um século de rupturas, impérios e ideais</div>
+  </div>
+  <div class="rule-thick"></div>
+</header>
+
+<div class="dateline-bar"><div class="wrap">
+  <span> 9° Ano  </span>
+  <span>Terça-Feira, 7 de Julho de 2026</span>
+  <span>O Séculos Das Revoluções Chinesas</span>
+</div></div>
+
+<nav class="index">
+  <div class="wrap">
+    <span class="label">NESTA EDIÇÃO</span>
+    <a href="#contracultura">Revolução Hippie</a>
+    <a href="#dominacao">Dominação e Resistência</a>
+    <a href="#republica">Fim do Império</a>
+    <a href="#rpc">República Popular</a>
+    <a href="#mao">Governo de Mao</a>
+  </div>
+</nav>
+
+<section class="hero-banner">
+  <div class="wrap">
+    <div class="eyebrow">Especial desta edição</div>
+    <h2>Linha do Tempo das Revoluções</h2>
+    <p class="hero-caption">toque ou clique em um marco para ir direto à matéria</p>
+
+    <div class="timeline-desktop">
+      <svg viewBox="0 0 1200 280" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.10" stroke="#efe6d2" stroke-width="2">
+          <line x1="600" y1="190" x2="600" y2="40"/>
+          <line x1="600" y1="190" x2="730" y2="70"/>
+          <line x1="600" y1="190" x2="470" y2="70"/>
+          <line x1="600" y1="190" x2="780" y2="140"/>
+          <line x1="600" y1="190" x2="420" y2="140"/>
+          <line x1="600" y1="190" x2="800" y2="190"/>
+          <line x1="600" y1="190" x2="400" y2="190"/>
+        </g>
+
+        <line x1="90" y1="205" x2="1080" y2="205" stroke="#9c7c3c" stroke-width="3"/>
+        <polygon points="1080,198 1098,205 1080,212" fill="#9c7c3c"/>
+        <text x="1090" y="222" font-size="13" fill="#efe6d2" font-family="Special Elite, monospace">até hoje</text>
+
+        <path d="M650,205 Q705,135 760,95" fill="none" stroke="#d99a3b" stroke-width="3" stroke-dasharray="6,6"/>
+
+        <a href="#dominacao" class="node-link">
+          <circle cx="150" cy="205" r="12" fill="#7a2118" stroke="#efe6d2" stroke-width="2"/>
+          <text x="150" y="240" text-anchor="middle" font-size="15" font-weight="bold" fill="#9c7c3c">1839</text>
+          <text x="150" y="258" text-anchor="middle" font-size="12" fill="#efe6d2">Dominação</text>
+        </a>
+
+        <a href="#republica" class="node-link">
+          <circle cx="430" cy="205" r="12" fill="#7a2118" stroke="#efe6d2" stroke-width="2"/>
+          <text x="430" y="240" text-anchor="middle" font-size="15" font-weight="bold" fill="#9c7c3c">1911</text>
+          <text x="430" y="258" text-anchor="middle" font-size="12" fill="#efe6d2">Fim do Império</text>
+        </a>
+
+        <a href="#rpc" class="node-link">
+          <circle cx="650" cy="205" r="12" fill="#7a2118" stroke="#efe6d2" stroke-width="2"/>
+          <text x="650" y="240" text-anchor="middle" font-size="15" font-weight="bold" fill="#9c7c3c">1949</text>
+          <text x="650" y="258" text-anchor="middle" font-size="12" fill="#efe6d2">República Popular</text>
+        </a>
+
+        <a href="#mao" class="node-link">
+          <circle cx="950" cy="205" r="12" fill="#7a2118" stroke="#efe6d2" stroke-width="2"/>
+          <text x="950" y="240" text-anchor="middle" font-size="15" font-weight="bold" fill="#9c7c3c">1966–76</text>
+          <text x="950" y="258" text-anchor="middle" font-size="12" fill="#efe6d2">Era Mao</text>
+        </a>
+
+        <a href="#contracultura" class="node-link">
+          <circle cx="760" cy="95" r="12" fill="#d99a3b" stroke="#efe6d2" stroke-width="2"/>
+          <text x="760" y="75" text-anchor="middle" font-size="15" font-weight="bold" fill="#d99a3b">1967</text>
+          <text x="760" y="58" text-anchor="middle" font-size="12" fill="#efe6d2">Revolução Hippie (EUA)</text>
+        </a>
+      </svg>
+    </div>
+
+    <ul class="timeline-mobile">
+      <li><a href="#dominacao"><span class="t-year">1839</span> Dominação e Resistência</a></li>
+      <li><a href="#republica"><span class="t-year">1911</span> Fim do Império</a></li>
+      <li><a href="#rpc"><span class="t-year">1949</span> República Popular</a></li>
+      <li><a href="#mao"><span class="t-year">1966–76</span> Governo de Mao</a></li>
+      <li class="branch"><a href="#contracultura"><span class="t-year">1967</span> Revolução Hippie (EUA)</a></li>
+    </ul>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="front">
+    <div class="front-grid">
+      <div class="lead">
+        <div class="eyebrow">Especial</div>
+        <h2>Do império ao socialismo: a China que mudou o mundo</h2>
+        <p class="subhead">Em quatro atos, revisitamos um século de dominação estrangeira, a queda de um trono com mais de dois mil anos e a ascensão de Mao Tsé-Tung à frente da nova República Popular.</p>
+
+        <!-- ============================================================
+          📸 IMAGEM 1 — IMAGEM DE DESTAQUE DA CAPA (front cover image)
+          Posição: abaixo do subtítulo, antes do parágrafo introdutório
+          Sugestão: foto panorâmica icônica da China imperial ou da Muralha
+          Tamanho ideal: ~700×320px, horizontal/paisagem
+          Exemplo de src: "https://..." ou caminho local
+          ============================================================ -->
+        <figure class="story-photo" style="margin-bottom:14px;">
+          <img src="china_imperial.jpg" alt="Descreva a imagem aqui">
+          <figcaption>O grande Imperio Chines.</figcaption>
+        </figure>
+
+        <p>Da humilhação imposta pelas guerras do Ópio à proclamação da República em 1912, e desta à fundação da República Popular em 1949 — a China do século XX é a história de um país que se reinventou sob fogo. Acompanhe a série completa nas páginas internas.</p>
+      </div>
+      <div class="secondary-box">
+        <div class="eyebrow">Contracultura</div>
+        <h3>Flores contra fuzis: a explosão hippie dos anos 1960</h3>
+        <p class="subhead">Enquanto a Ásia vivia suas próprias rupturas, jovens americanos inventavam a sua — sem fuzis, mas com a mesma vontade de virar o mundo do avesso.</p>
+        <a class="read-link" href="#contracultura">LEIA A MATÉRIA COMPLETA →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HIPPIE ===================== -->
+  <article class="story story--hippie" id="contracultura">
+    <div class="kicker">Contracultura · Internacional</div>
+    <h2>Flores contra fuzis: a revolução hippie desafia o mundo</h2>
+    <div class="byline">Por Redação Internacional — San Francisco, EUA</div>
+
+    <figure class="story-photo">
+      <img src="https://cdn18.picryl.com/photo/2019/10/24/head-shop-on-haight-street-in-the-haight-ashbury-section-of-san-francisco-california-88b9dc-1024.jpg" alt="Loja hippie ('head shop') na Haight Street, no bairro de Haight-Ashbury, São Francisco">
+      <figcaption>Uma "head shop" na Haight Street, epicentro do movimento hippie em São Francisco. Foto: Carol M. Highsmith / Library of Congress (domínio público).</figcaption>
+    </figure>
+
+    <div class="story-grid">
+      <div class="story-body">
+        <p>No coração da Guerra Fria e sob a sombra do recrutamento para o Vietnã, uma geração de jovens nascidos no pós-guerra decidiu que não queria herdar o mundo dos pais. No bairro de Haight-Ashbury, em São Francisco, formou-se o epicentro de um movimento que pregava paz, amor livre e a rejeição do consumismo americano.</p>
+        <p>O auge chegou no chamado "Verão do Amor", em 1967, quando milhares de jovens de todo o país convergiram para a cidade, vestidos de cores vivas, flores no cabelo e violões na mão. Comunidades alternativas, experiências com substâncias psicodélicas e uma nova música — psicodélica, livre, barulhenta — davam forma a um estilo de vida que rejeitava hierarquias, fronteiras e guerras.</p>
+
+        <blockquote class="pull">
+          Em Haight-Ashbury, a revolução não usava uniforme: usava flores no cabelo.
+        </blockquote>
+
+        <!-- ============================================================
+          📸 IMAGEM 2 — IMAGEM INLINE NO ARTIGO HIPPIE
+          Posição: entre os parágrafos, antes do trecho sobre Woodstock
+          Sugestão: foto do Festival de Woodstock (1969) ou manifestantes
+          com flores — imagem de domínio público disponível no Picryl/LOC
+          Tamanho ideal: ~480×260px, horizontal
+          Float opcional: style="float:right; margin:0 0 14px 22px; width:45%"
+          ============================================================ -->
+        <figure class="story-photo">
+          <img src="verao_do_amor.jpg" alt="Descreva a imagem aqui">
+          <figcaption>Verão Do Amor Em 1967.</figcaption>
+        </figure>
+
+        <p>O movimento atingiu seu ponto mais alto simbólico em 1969, no festival de Woodstock, que reuniu cerca de 400 mil pessoas em três dias de música e comunhão. Mas o sonho começou a desmoronar quase tão rápido quanto nasceu: o uso excessivo de drogas, a violência registrada em eventos como o festival de Altamont e a absorção comercial da estética hippie pelo mercado de moda esvaziaram boa parte de seu ímpeto original já no início dos anos 1970.</p>
+        <p>Mesmo assim, o legado permaneceu. Bandeiras do movimento ambiental, da alimentação natural, da liberdade sexual e de novas formas de espiritualidade seguem, até hoje, devendo sua origem àquela geração que, por um breve momento, tentou substituir as armas por flores.</p>
+      </div>
+
+      <aside class="factbox">
+        <h4>Em resumo</h4>
+        <ol>
+          <li><b>1965</b>Surgem os primeiros núcleos da contracultura em San Francisco.</li>
+          <li><b>Verão de 1967</b>O "Verão do Amor" leva milhares de jovens a Haight-Ashbury.</li>
+          <li><b>1969</b>Festival de Woodstock reúne cerca de 400 mil pessoas.</li>
+          <li><b>Início dos anos 1970</b>O movimento perde força e se dilui na cultura de massa.</li>
+        </ol>
+      </aside>
+    </div>
+  </article>
+
+  <div class="section-divider"><span>Especial China — Do Império à Revolução</span></div>
+
+  <!-- ===================== DOMINAÇÃO ===================== -->
+  <article class="story" id="dominacao">
+    <div class="kicker">Especial China · Parte 1</div>
+    <h2>Sob o jugo estrangeiro: como a China resistiu à dominação ocidental</h2>
+    <div class="byline">Por Redação de História — Cantão, China</div>
+
+    <figure class="story-photo">
+      <img src="https://cdn2.picryl.com/photo/1843/05/30/destroying-chinese-war-junks-by-e-duncan-1843-af35d9-1024.jpg" alt="Pintura do navio britânico Nemesis destruindo embarcações chinesas na Primeira Guerra do Ópio, 1841">
+      <figcaption>O vapor britânico "Nemesis" destrói juncos de guerra chineses na Baía de Anson, em 1841, durante a Primeira Guerra do Ópio. Pintura de Edward Duncan, 1843 (domínio público).</figcaption>
+    </figure>
+
+    <div class="story-grid">
+      <div class="story-body">
+        <p>Até o início do século XIX, a China imperial via-se como o centro do mundo civilizado. Esse equilíbrio foi rompido pelo comércio forçado do ópio britânico, que levou à Primeira Guerra do Ópio (1839–1842). A derrota chinesa abriu caminho para o Tratado de Nanquim, o primeiro de uma série de "tratados desiguais": cessão de Hong Kong, abertura de portos e privilégios extraterritoriais para estrangeiros.</p>
+        <p>Uma Segunda Guerra do Ópio (1856–1860) ampliou ainda mais a presença estrangeira, com legações instaladas em Pequim e potências como Reino Unido, França, Rússia, Alemanha e, depois, o Japão dividindo o território chinês em zonas de influência. Internamente, a dinastia Qing já enfrentava sua maior crise: a Rebelião Taiping (1850–1864), movimento messiânico liderado por Hong Xiuquan, tornou-se uma das guerras civis mais sangrentas da história, com estimativas de 20 a 30 milhões de mortos.</p>
+
+        <!-- ============================================================
+          📸 IMAGEM 3 — IMAGEM SECUNDÁRIA NO ARTIGO DOMINAÇÃO
+          Posição: antes da citação de destaque (pull quote)
+          Sugestão: gravura ou foto da Rebelião dos Boxers, ou tropas
+          estrangeiras em Pequim (1900) — domínio público
+          Tamanho ideal: ~480×260px, horizontal
+          ============================================================ -->
+        <figure class="story-photo">
+          <img src="boxers.png" alt="Descreva a imagem aqui">
+          <figcaption>Rebelião Dos Boxers. <br> Violência & Revolta Na China Imperial </br> </figcaption>
+        </figure>
+
+        <blockquote class="pull">
+          Entre o ópio e a pólvora, a China do século XIX aprendeu a resistir.
+        </blockquote>
+
+        <p>A reação popular ao avanço estrangeiro culminou na Rebelião dos Boxers (1899–1901), levante nacionalista e antiestrangeiro que cercou o bairro das legações em Pequim antes de ser esmagado por uma aliança de oito potências internacionais. O episódio, seguido de novas indenizações e humilhações, alimentou um sentimento nacionalista que, poucos anos depois, viria a derrubar o próprio trono imperial.</p>
+        <p>Esse período, lembrado na China como o "Século da Humilhação", tornou-se a memória fundadora de praticamente todos os movimentos políticos chineses do século seguinte — do republicanismo de Sun Yat-sen ao comunismo de Mao Tsé-Tung.</p>
+      </div>
+
+      <aside class="factbox">
+        <h4>Em resumo</h4>
+        <ol>
+          <li><b>1839–1842</b>Primeira Guerra do Ópio e Tratado de Nanquim.</li>
+          <li><b>1850–1864</b>Rebelião Taiping, uma das guerras civis mais letais da história.</li>
+          <li><b>1856–1860</b>Segunda Guerra do Ópio amplia as concessões estrangeiras.</li>
+          <li><b>1899–1901</b>Rebelião dos Boxers e cerco às legações em Pequim.</li>
+        </ol>
+      </aside>
+    </div>
+  </article>
+
+  <!-- ===================== FIM DO IMPÉRIO ===================== -->
+  <article class="story" id="republica">
+    <div class="kicker">Especial China · Parte 2</div>
+    <h2>Mais de dois mil anos de história: cai o último imperador da China</h2>
+    <div class="byline">Por Redação de História — Nanquim, China</div>
+
+    <figure class="story-photo">
+      <img src="https://cdn2.picryl.com/photo/2008/11/07/xh3-color-1515b7-640.jpg" alt="Sun Yat-sen na posse como presidente provisório da República da China, 1912">
+      <figcaption>Sun Yat-sen na posse como presidente provisório da nova República da China, em Nanquim, 1912. Foto de domínio público.</figcaption>
+    </figure>
+
+    <div class="story-grid">
+      <div class="story-body">
+        <p>Enfraquecida por derrotas externas, corrupção interna e a pressão de movimentos revolucionários inspirados por Sun Yat-sen, a dinastia Qing chegou ao limite em outubro de 1911. O Levante de Wuchang deu início à Revolução Xinhai, e em poucas semanas diversas províncias declararam independência da corte imperial.</p>
+        <p>Em 1º de janeiro de 1912, Sun Yat-sen foi proclamado presidente provisório da nova República da China, em Nanquim, encerrando — pelo menos no papel — a era dos imperadores. A confirmação formal veio em 12 de fevereiro de 1912, quando a corte Qing negociou a abdicação do imperador-criança Puyi, pondo fim a mais de dois mil anos de governo imperial iniciados com a unificação de Qin Shi Huang, em 221 a.C.</p>
+
+        <blockquote class="pull">
+          Em poucos meses, mais de dois mil anos de tronos e dinastias chegaram ao fim.
+        </blockquote>
+
+        <!-- ============================================================
+          📸 IMAGEM 4 — IMAGEM COMPLEMENTAR NO ARTIGO REPÚBLICA
+          Posição: após a blockquote "mais de dois mil anos de tronos..."
+          Sugestão: foto da abdicação de Puyi ou multidão celebrando
+          a proclamação da República em 1912 — domínio público
+          Tamanho ideal: ~480×260px, horizontal
+          ============================================================ -->
+        <figure class="story-photo">
+          <img src="rev_china.jpg" alt="Descreva a imagem aqui">
+          <figcaption>Fim De Mais de Dois Mil Tronos & o Fim Da Dinastia</figcaption>
+        </figure>
+
+        <p>Para preservar a unidade do país, Sun Yat-sen cedeu a presidência ao general Yuan Shikai, que anos depois tentaria restaurar a monarquia em seu próprio favor — uma tentativa fracassada em 1915–1916. Sua morte, em 1916, abriu um longo período de fragmentação conhecido como a "Era dos Senhores da Guerra", com generais regionais disputando o controle de um país sem autoridade central forte.</p>
+        <p>Somente no final da década de 1920, com a chamada Expedição do Norte liderada pelo Kuomintang, a China voltaria a conhecer um governo nacional unificado — ainda que temporário, e às vésperas de novos e maiores confrontos.</p>
+      </div>
+
+      <aside class="factbox">
+        <h4>Em resumo</h4>
+        <ol>
+          <li><b>Out. 1911</b>Levante de Wuchang dá início à Revolução Xinhai.</li>
+          <li><b>1º jan. 1912</b>Proclamação da República; Sun Yat-sen, presidente provisório.</li>
+          <li><b>12 fev. 1912</b>Abdicação do imperador Puyi encerra a era imperial.</li>
+          <li><b>1915–1916</b>Tentativa monárquica de Yuan Shikai fracassa.</li>
+        </ol>
+      </aside>
+    </div>
+  </article>
+
+  <!-- ===================== RPC ===================== -->
+  <article class="story" id="rpc">
+    <div class="kicker">Especial China · Parte 3</div>
+    <h2>Mao Tsé-Tung proclama a República Popular da China em Pequim</h2>
+    <div class="byline">Por Redação de História — Pequim, China</div>
+
+    <figure class="story-photo">
+      <img src="https://cdn2.picryl.com/photo/1949/10/01/founding-ceremony-of-peoples-republic-of-china-bef8b3-1024.jpg" alt="Cerimônia de fundação da República Popular da China em Tiananmen, 1º de outubro de 1949">
+      <figcaption>Cerimônia de fundação da República Popular da China, em Tiananmen, Pequim, 1º de outubro de 1949. Foto de domínio público.</figcaption>
+    </figure>
+
+    <div class="story-grid">
+      <div class="story-body">
+        <p>A fragmentação da "Era dos Senhores da Guerra" deu lugar a uma disputa ainda mais decisiva: a guerra entre o Kuomintang (nacionalista), liderado por Chiang Kai-shek, e o Partido Comunista da China, liderado por Mao Tsé-Tung. Aliados contra a invasão japonesa durante a Segunda Guerra Sino-Japonesa (1937–1945), os dois lados retomaram o confronto direto assim que o Japão foi derrotado.</p>
+        <p>Apoiado por reformas agrárias que prometiam redistribuir terras aos camponeses e por uma eficiente guerra de guerrilhas, o Partido Comunista superou um Kuomintang minado pela corrupção e pela inflação, mesmo com o apoio militar dos Estados Unidos aos nacionalistas. Derrotado, Chiang Kai-shek refugiou-se em Taiwan em 1949, onde manteve a República da China — uma divisão que persiste até hoje.</p>
+
+        <blockquote class="pull">
+          "O povo chinês finalmente se ergueu."
+          <cite>Mao Tsé-Tung, 1º de outubro de 1949</cite>
+        </blockquote>
+
+        <p>Em 1º de outubro de 1949, do alto do Portão de Tiananmen, Mao Tsé-Tung proclamou oficialmente a fundação da República Popular da China. O novo governo nacionalizou indústrias, acelerou a reforma agrária — em muitos casos de forma violenta contra antigos latifundiários — e firmou uma aliança estratégica com a União Soviética já em 1950.</p>
+        <p>Ainda em seu primeiro ano, a jovem república já se envolvia em um novo conflito: o envio de tropas para apoiar a Coreia do Norte na Guerra da Coreia (1950–1953), um sinal claro de que o novo regime pretendia ocupar um papel de peso na cena internacional.</p>
+      </div>
+
+      <aside class="factbox">
+        <h4>Em resumo</h4>
+        <ol>
+          <li><b>1945–1949</b>Retomada da Guerra Civil Chinesa.</li>
+          <li><b>1949</b>Kuomintang derrotado refugia-se em Taiwan.</li>
+          <li><b>1º out. 1949</b>Mao proclama a República Popular da China.</li>
+          <li><b>1950</b>Aliança com a URSS e entrada na Guerra da Coreia.</li>
+        </ol>
+      </aside>
+    </div>
+  </article>
+
+  <!-- ===================== MAO ===================== -->
+  <article class="story" id="mao">
+    <div class="kicker">Especial China · Parte 4</div>
+    <h2>Sob Mao: utopia socialista, fome e revolução cultural</h2>
+    <div class="byline">Por Redação de História — Pequim, China</div>
+
+    <figure class="story-photo">
+      <img src="https://cdn2.picryl.com/photo/1966/09/15/red-guards-in-tiananmen-square-ce5720-1024.jpg" alt="Guardas Vermelhos reunidos em Tiananmen durante a Revolução Cultural, 1966" onerror="this.parentElement.style.display='none'">
+      <figcaption>Guardas Vermelhos reunidos na Praça de Tiananmen à espera de Mao Tsé-Tung, em setembro de 1966, no início da Revolução Cultural. Foto de domínio público.</figcaption>
+    </figure>
+
+    <div class="story-grid">
+      <div class="story-body">
+        <p>Consolidado como presidente do Partido Comunista, Mao Tsé-Tung lançou-se a um ambicioso projeto de industrialização acelerada inspirado no modelo soviético. Entre 1958 e 1962, o "Grande Salto Adiante" forçou a coletivização da agricultura em comunas populares e impôs metas de produção irreais, sustentadas por relatórios falsos. O resultado foi a Grande Fome Chinesa, uma das maiores fomes provocadas pelo homem na história, com estimativas que variam entre 15 e 45 milhões de mortes.</p>
+        <p>Após o fracasso, um período de relativo pragmatismo, conduzido por figuras como Liu Shaoqi e Deng Xiaoping, tentou reorganizar a economia. Temendo perder influência, Mao respondeu em 1966 com a Revolução Cultural, mobilizando jovens organizados na Guarda Vermelha para expurgar elementos considerados "burgueses" dentro do próprio partido e da sociedade chinesa.</p>
+
+        <blockquote class="pull">
+          Entre o sonho da igualdade e o custo humano, a era Mao dividiu opiniões que ecoam até hoje.
+        </blockquote>
+
+        <p>Durante a década seguinte, escolas e universidades foram fechadas, intelectuais e funcionários públicos foram perseguidos ou enviados ao campo, e um intenso culto à personalidade — simbolizado pelo "Pequeno Livro Vermelho" — transformou Mao em figura quase intocável. A violência política e o caos social só perderiam força com sua morte, em 9 de setembro de 1976, e a posterior prisão do chamado "Bando dos Quatro", que selou o fim oficial da Revolução Cultural.</p>
+        <p>O legado de Mao permanece um dos mais controversos da história contemporânea: a ele se atribui o fim da fragmentação e da humilhação estrangeira que marcaram décadas anteriores, mas também a responsabilidade direta por políticas que custaram dezenas de milhões de vidas. Foi seu sucessor, Deng Xiaoping, quem, a partir de 1978, conduziria a China a um novo rumo, abrindo a economia ao mercado.</p>
+      </div>
+
+      <aside class="factbox">
+        <h4>Em resumo</h4>
+        <ol>
+          <li><b>1958–1962</b>Grande Salto Adiante e a Grande Fome Chinesa.</li>
+          <li><b>1966–1976</b>Revolução Cultural e mobilização da Guarda Vermelha.</li>
+          <li><b>9 set. 1976</b>Morte de Mao Tsé-Tung.</li>
+          <li><b>1976</b>Prisão do "Bando dos Quatro" encerra a Revolução Cultural.</li>
+        </ol>
+      </aside>
+    </div>
+  </article>
+
+  <div class="ornament">❖ ❖ ❖</div>
+
+  <div class="section-divider"><span>Expediente</span></div>
+
+  <section class="credits">
+    <div class="credits-group">
+      <h4>Grupo</h4>
+      <ul>
+        <li>Judson</li>
+        <li>Geovana G</li>
+        <li>Willer</li>
+        <li>Davi Pacheco</li>
+        <li>Pedro</li>
+      </ul>
+    </div>
+    <div class="owner-block">
+      <!-- ============================================================
+        📸 IMAGEM 5 — FOTO/AVATAR DO CRIADOR (seção de créditos)
+        Posição: acima do carimbo "CRIADOR & DONO"
+        Sugestão: foto de perfil do Davi Pacheco
+        Tamanho ideal: ~120×120px, quadrada ou circular
+        CSS sugerido: border-radius:50%; width:110px; height:110px;
+        object-fit:cover; border:3px double var(--red); margin-bottom:10px;
+        ============================================================ -->
+  
+
+      <div class="owner-stamp">CRIADOR<br>&amp;<br>DONO</div>
+      <p class="owner-name">Davi Pacheco</p>
+      <p class="owner-sub">Criador e Dono do Site</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    A Era Das Evoluções — E assim encerramos nossa edição, lembrando que conhecer a história é o primeiro passo para entender o presente e construir um futuro melhor.
+  </div>
+</footer>
+
+<button id="top-btn" aria-label="Voltar ao topo">↑</button>
+
+<script>
+  const topBtn = document.getElementById('top-btn');
+  window.addEventListener('scroll', () => {
+    topBtn.classList.toggle('show', window.scrollY > 500);
+  });
+  topBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  const stories = document.querySelectorAll('article.story');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  stories.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
